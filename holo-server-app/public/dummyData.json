@@ -1,0 +1,142 @@
+[{
+        "actors": [{
+                "name": "Stop machine",
+                "type": "button"
+            },
+            {
+                "name": "Start machine",
+                "type": "button"
+            }
+        ]
+    },
+    {
+        "actors": [{
+                "name": "Change rotation",
+                "type": "slider",
+                "value": "27"
+            },
+            {
+                "name": "Rotation angle",
+                "type": "output",
+                "value": "Current rotation: 46 rad"
+            }
+        ]
+    },
+    {
+        "actors": [{
+                "name": "Increase",
+                "type": "button",
+                "value": "27"
+            },
+            {
+                "name": "Pressure",
+                "type": "output",
+                "value": "Current pressure: 191"
+            }
+        ]
+    },
+    {
+        "actors": [{
+                "name": "Decrease",
+                "type": "button",
+                "value": "27"
+            },
+            {
+                "name": "Pressure",
+                "type": "output",
+                "value": "Current pressure: 154"
+            }
+        ]
+    },
+    {
+        "actors": [{
+                "name": "Output",
+                "type": "slider",
+                "value": "99"
+            },
+            {
+                "name": "Get output",
+                "type": "button",
+                "value": "Current pressure: 154"
+            }
+        ]
+    },
+    {
+        "actors": [{
+                "name": "Go left",
+                "type": "button",
+                "value": "Current pressure: 154"
+            },
+            {
+                "name": "Go right",
+                "type": "button",
+                "value": "Current pressure: 154"
+            },
+            {
+                "name": "Continue straight",
+                "type": "button",
+                "value": "Current pressure: 154"
+            }
+        ]
+    },
+    {
+        "actors": [{
+                "name": "Temperature",
+                "type": "slider",
+                "value": "10"
+            },
+            {
+                "name": "Current",
+                "type": "slider",
+                "value": "67"
+            }, {
+                "name": "Resistance",
+                "type": "slider",
+                "value": "0"
+            }, {
+                "name": "Speed",
+                "type": "slider",
+                "value": "45"
+            }
+        ]
+    },
+    {
+        "actors": [{
+                "name": "Voltage",
+                "type": "output",
+                "value": "Decrease needed!!!"
+            },
+            {
+                "name": "Parameters",
+                "type": "output",
+                "value": "Reactors 4 and 5 offline!"
+            }
+        ]
+    },
+    {
+        "actors": [{
+                "name": "Value",
+                "type": "output",
+                "value": "Currently activated 6 stations"
+            },
+            {
+                "name": "Increase",
+                "type": "slider",
+                "value": "6"
+            }
+        ]
+    },
+    {
+        "actors": [{
+                "name": "Drift speed",
+                "type": "output",
+                "value": "Cross-sectional area * 5"
+            },
+            {
+                "name": "Stop machine",
+                "type": "button",
+                "value": "6"
+            }
+        ]
+    }
+]

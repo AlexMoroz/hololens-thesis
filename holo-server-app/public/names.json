@@ -1,0 +1,321 @@
+[{
+  "name": "Zebra"
+}, {
+  "name": "WinSystems"
+}, {
+  "name": "WandPi 8M"
+}, {
+  "name": "Wandboard"
+}, {
+  "name": "VIA Springboard VAB-600"
+}, {
+  "name": "VIA APC 8750 / Rock"
+}, {
+  "name": "Ventana GW5510 Femto"
+}, {
+  "name": "Utilite2"
+}, {
+  "name": "Utilite"
+}, {
+  "name": "UP"
+}, {
+  "name": "UDOO X86"
+}, {
+  "name": "UDOO"
+}, {
+  "name": "TS-7970"
+}, {
+  "name": "TS-7680"
+}, {
+  "name": "TS-7250-V2"
+}, {
+  "name": "Tronsmart Draco"
+}, {
+  "name": "Tritium"
+}, {
+  "name": "TBS 2910 Matrix"
+}, {
+  "name": "Supermicro E100-8Q"
+}, {
+  "name": "Snowball"
+}, {
+  "name": "RouterBOARD RB953GS-5HnT"
+}, {
+  "name": "RouterBOARD RB450G"
+}, {
+  "name": "RIoTboard"
+}, {
+  "name": "Rikomagic MK802"
+}, {
+  "name": "Renegade"
+}, {
+  "name": "RED Brick"
+}, {
+  "name": "Raspberry Pi Zero"
+}, {
+  "name": "Raspberry Pi 3"
+}, {
+  "name": "Raspberry Pi 3"
+}, {
+  "name": "Raspberry Pi 2"
+}, {
+  "name": "Raspberry Pi"
+}, {
+  "name": "Radxa Rock"
+}, {
+  "name": "PINE64 Rock64"
+}, {
+  "name": "PINE A64+"
+}, {
+  "name": "PINE A64"
+}, {
+  "name": "phyBOARD-Wega"
+}, {
+  "name": "phyBOARD-Mira"
+}, {
+  "name": "pcDuino3Nano"
+}, {
+  "name": "pcDuino3"
+}, {
+  "name": "pcDuino v2"
+}, {
+  "name": "pcDuino Lite"
+}, {
+  "name": "PC Engines APU"
+}, {
+  "name": "PC Engines APU"
+}, {
+  "name": "PandaBoard ES"
+}, {
+  "name": "P112"
+}, {
+  "name": "Ouya"
+}, {
+  "name": "Orion R28"
+}, {
+  "name": "Orange Pi Zero Pluz 2"
+}, {
+  "name": "Orange Pi Win"
+}, {
+  "name": "Orange Pi R1"
+}, {
+  "name": "Orange Pi Plus 2E"
+}, {
+  "name": "Orange Pi Plus 2"
+}, {
+  "name": "Orange Pi Plus"
+}, {
+  "name": "Orange Pi PC Plus"
+}, {
+  "name": "Orange Pi PC 2"
+}, {
+  "name": "Orange Pi PC"
+}, {
+  "name": "Orange Pi One"
+}, {
+  "name": "Orange Pi Mini 2"
+}, {
+  "name": "Orange Pi Mini"
+}, {
+  "name": "Orange Pi Lite"
+}, {
+  "name": "Orange Pi 2"
+}, {
+  "name": "Orange Pi"
+}, {
+  "name": "Omega2"
+}, {
+  "name": "OLinuXino A20"
+}, {
+  "name": "OLinuXino A20"
+}, {
+  "name": "OLinuXino A13"
+}, {
+  "name": "OLinuXino A10"
+}, {
+  "name": "ODROID-XU4"
+}, {
+  "name": "ODROID-XU3 Lite"
+}, {
+  "name": "ODROID-XU3"
+}, {
+  "name": "ODROID-XU"
+}, {
+  "name": "ODROID-W"
+}, {
+  "name": "ODROID-U3"
+}, {
+  "name": "ODROID-C2"
+}, {
+  "name": "ODROID-C1+"
+}, {
+  "name": "ODROID-C1"
+}, {
+  "name": "Nvidia Jetson TK1"
+}, {
+  "name": "Nitrogen8M"
+}, {
+  "name": "Nitrogen6x"
+}, {
+  "name": "NanoPi NEO"
+}, {
+  "name": "NanoPi 2"
+}, {
+  "name": "NanoPC-T1"
+}, {
+  "name": "MYIR Rico Board"
+}, {
+  "name": "MYIR MYS-6ULX"
+}, {
+  "name": "MYIR MYD-AM335X"
+}, {
+  "name": "MTB025"
+}, {
+  "name": "MK808"
+}, {
+  "name": "MK802 II"
+}, {
+  "name": "MiraBox"
+}, {
+  "name": "MIPS Creator CI20"
+}, {
+  "name": "MinnowBoard"
+}, {
+  "name": "MarsBoard"
+}, {
+  "name": "MarsBoard"
+}, {
+  "name": "MarsBoard"
+}, {
+  "name": "Le Potato"
+}, {
+  "name": "iW-RainboW-G23S RZ/G1C SBC"
+}, {
+  "name": "Inventami"
+}, {
+  "name": "Inventami"
+}, {
+  "name": "Intel Galileo"
+}, {
+  "name": "Inforce 6540"
+}, {
+  "name": "Inforce 6410plus"
+}, {
+  "name": "Inforce 6410"
+}, {
+  "name": "Inforce 6309"
+}, {
+  "name": "IGEP"
+}, {
+  "name": "HummingBoard"
+}, {
+  "name": "Hackberry A10"
+}, {
+  "name": "Gumstix Overo EarthSTORM + Summit"
+}, {
+  "name": "GoWarrior"
+}, {
+  "name": "Gizmo Board"
+}, {
+  "name": "GameStick"
+}, {
+  "name": "G6818"
+}, {
+  "name": "G4418"
+}, {
+  "name": "Foxconn AT-5570"
+}, {
+  "name": "Forlinx OK335xD"
+}, {
+  "name": "Firefly-RK3399"
+}, {
+  "name": "Firefly-RK3288 Plus"
+}, {
+  "name": "Firefly-RK3288"
+}, {
+  "name": "Espressobin"
+}, {
+  "name": "Embest SBC8600B"
+}, {
+  "name": "DreamPlug"
+}, {
+  "name": "CuBox-i"
+}, {
+  "name": "Cubieboard 4 / CC-A80"
+}, {
+  "name": "Cubieboard 3"
+}, {
+  "name": "Cubieboard 2"
+}, {
+  "name": "Cubieboard"
+}, {
+  "name": "Cosmic+ Board"
+}, {
+  "name": "C.H.I.P."
+}, {
+  "name": "Boardcon EM3399"
+}, {
+  "name": "Boardcon EM210"
+}, {
+  "name": "BeagleBone Black"
+}, {
+  "name": "BeagleBone"
+}, {
+  "name": "BeagleBoard-xM"
+}, {
+  "name": "BeagleBoard"
+}, {
+  "name": "Banana Pi BPI-W2"
+}, {
+  "name": "Banana Pi BPI-R2"
+}, {
+  "name": "Banana Pi BPI-R1"
+}, {
+  "name": "Banana Pi BPI-M3"
+}, {
+  "name": "Banana Pi BPI-M2+"
+}, {
+  "name": "Banana Pi BPI-M2 Zero"
+}, {
+  "name": "Banana Pi BPI-M2 Ultra"
+}, {
+  "name": "Banana Pi BPI-M2 Magic"
+}, {
+  "name": "Banana Pi BPI-M2 berry"
+}, {
+  "name": "Banana Pi BPI-M2"
+}, {
+  "name": "Banana Pi BPI-M1+"
+}, {
+  "name": "Banana Pi"
+}, {
+  "name": "Asus Tinker Board"
+}, {
+  "name": "Arndale Octa"
+}, {
+  "name": "Arndale Board"
+}, {
+  "name": "armStone"
+}, {
+  "name": "armStone"
+}, {
+  "name": "armStone"
+}, {
+  "name": "Adapteva Parallella"
+}, {
+  "name": "Boards MdediaTek X20"
+}, {
+  "name": "Boards HiKey"
+}, {
+  "name": "Boards Dragonboard 410c"
+}, {
+  "name": "Boards Bubblegum"
+}, {
+  "name": "banana_pi"
+}, {
+  "name": "raspberry_pi"
+}, {
+  "name": "raspberry_pi2"
+}, {
+  "name": "lte-m_device_link_labs"
+}]
