@@ -1,0 +1,245 @@
+<html ng-app="myApp">
+
+<head>
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Optimize mobile viewport -->
+
+    <title>Control App</title>
+
+    <!-- SCROLLS -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+    <!-- load bootstrap -->
+    <link rel="stylesheet" href="bower_components/angularjs-slider/dist/rzslider.min.css">
+    <!-- load slider -->
+    <style>
+        .jumbotron {
+            margin-bottom: 0px;
+        }
+    </style>
+
+    <!-- SPELLS -->
+    <script src="bower_components/underscore/underscore.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <!-- load jquery -->
+    <script src="bower_components/angular/angular.js"></script>
+    <!-- load angular -->
+    <script src="https://code.angularjs.org/1.6.9/angular-cookies.js"></script>
+    <script src="bower_components/angularjs-slider/dist/rzslider.min.js"></script>
+    <script src="core.js"></script>
+
+</head>
+
+<body ng-controller="mainController">
+    <nav class="navbar navbar-default navbar-static-top" ng-show="hideAuth">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                          </button>
+                <a ng-click="tab.active = 'main'" class="navbar-brand">Workspace</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li ng-class="{active: tab.active == 'models'}">
+                        <a ng-click="tab.active = 'models'">Models</a>
+                    </li>
+                    <li ng-class="{active: tab.active == 'search'}">
+                        <a ng-click="tab.active = 'search'">Search</a>
+                    </li>
+                </ul>
+                <p class="navbar-text">Signed in as {{auth.login}}</p>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid" ng-hide="hideAuth">
+        <br>
+        <div class="col-sm-12 text-center">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Authentication</h3>
+                </div>
+                <div class="panel-body">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Login</label>
+                            <div class="col-sm-10">
+                                <select class="form-control" ng-model="auth.login">
+                                    <option ng-repeat="value in users">{{value}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+                            <div class="col-sm-10">
+                                <input type="password" class="form-control" id="inputPassword3" placeholder="Password" ng-model="auth.pass">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-block btn-default" ng-click="submit(auth.login, auth.pass)">Sign in</button>
+                            </div>
+                        </div>
+                        <div class="alert alert-danger" ng-show="credentialsError" role="alert"> Oops. Credentials are incorrect. Try again.</div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-show="hideAuth">
+        <div class="container-fluid">
+            <div ng-show="tab.active=='main'">
+                <div class="panel panel-info" ng-repeat="device in selected">
+                    <div class="panel-heading">
+                                {{device.name}}
+                                <i ng-click="deleteFromWorkspace(device)" class="glyphicon glyphicon-minus"></i>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-sm-12" ng-repeat="actor in device.actors">
+                            <form ng-if="actor.type == 'input'">
+                                <div class="form-group">
+                                    <label>{{actor.name}}</label>
+                                    <input type="text" class="form-control" placeholder="Text here" ng-model="actor.value">
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-default btn-block" ng-click="actor.method(actor.value)">Send</button>
+                                </div>
+                            </form>
+                            <form ng-if="actor.type == 'output'">
+                                <div class="form-group">
+                                    <label>{{actor.name}}</label>
+                                    <input type="text" class="form-control" disabled ng-model="actor.value" align="middle">
+                                </div>
+                            </form>
+                            <form ng-if="actor.type == 'slider'">
+                                <div class="form-group">
+                                    <label class="col-sm-12">
+                                        <p class="text-center">{{actor.name}}</p>
+                                    </label>
+                                    <rzslider rz-slider-model="actor.value" rz-slider-options="actor.options"></rzslider>
+                                </div>
+                            </form>
+                            <form ng-if="actor.type == 'button'">
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-default btn-block" ng-click="actor.method(actor.value)">{{actor.name}}</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Debug Panel
+                        <i ng-show="simulationEnabled" ng-click="simulationEnabled = !simulationEnabled" class="glyphicon glyphicon-stop"></i>
+                        <i ng-hide="simulationEnabled" ng-click="simulationEnabled = !simulationEnabled" class="glyphicon glyphicon-play"></i>
+                    </h3>
+                    </div>
+                    <div class="panel-body" ng-show="simulationEnabled">
+                        <p><i ng-show="loadingSimulation" class="glyphicon glyphicon-refresh"></i>  Loading simulation...</p>
+                        <div class="jumbotron">
+                                <p ng-repeat="item in simulationOutput">{{item}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div ng-show="tab.active=='models'">
+                <div class="container">
+                    <table class="table table-striped">
+                        <tr>
+                            <th>Model Image</th>
+                            <th>Model Name</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="/images/lte-m_device_link_labs.jpg" height="300" width="300" class="img-thumbnail">
+                            </td>
+                            <td>lte-m_device_link_labs</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="/images/banana_pi.jpg" height="300" width="300" class="img-thumbnail">
+                            </td>
+                            <td>banana_pi</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="/images/raspberry_pi.jpg" height="300" width="300" class="img-thumbnail">
+                            </td>
+                            <td>raspberry_pi</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img height="300" width="300" src="/images/ufo.jpg" class="img-thumbnail">
+                            </td>
+                            <td>raspberry_pi2</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div ng-show="tab.active == 'search'">
+                    <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1">Device name:</span>
+                            <input type="text" class="form-control" ng-model="searchSelect" ng-change="inputUpdate(searchSelect)" aria-describedby="basic-addon1">
+                    </div>
+                    <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
+                    <div ng-show="noResults">
+                      <i class="glyphicon glyphicon-remove"></i> No Results Found
+                    </div>
+                    <br>
+                    <div class="panel panel-info" ng-repeat="device in search">
+                            <div class="panel-heading">
+                                {{device.name}}
+                                        <i ng-click="addToWorkspace(device)" class="glyphicon glyphicon-plus"></i>
+                            </div>
+                            <div class="panel-body">
+                                <div class="col-sm-12" ng-repeat="actor in device.actors">
+                                    <form ng-if="actor.type == 'input'">
+                                        <div class="form-group">
+                                            <label>{{actor.name}}</label>
+                                            <input type="text" class="form-control" placeholder="Text here" ng-model="actor.value">
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-default btn-block" ng-click="actor.method(actor.value)">Send</button>
+                                        </div>
+                                    </form>
+                                    <form ng-if="actor.type == 'output'">
+                                        <div class="form-group">
+                                            <label>{{actor.name}}</label>
+                                            <input type="text" class="form-control" disabled ng-model="actor.value" align="middle">
+                                        </div>
+                                    </form>
+                                    <form ng-if="actor.type == 'slider'">
+                                        <div class="form-group">
+                                            <label class="col-sm-12">
+                                                <p class="text-center">{{actor.name}}</p>
+                                            </label>
+                                            <rzslider rz-slider-model="actor.value" rz-slider-options="actor.options"></rzslider>
+                                        </div>
+                                    </form>
+                                    <form ng-if="actor.type == 'button'">
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-default btn-block" ng-click="actor.method(actor.value)">{{actor.name}}</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
